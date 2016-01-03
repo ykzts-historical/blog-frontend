@@ -14,7 +14,7 @@ class RootComponent extends React.Component {
       <html>
         <head>
           <meta charSet='UTF-8'/>
-          <link href='http://yui.yahooapis.com/pure/0.6.0/pure-min.css' rel='stylesheet'/>
+          <link href='/bundle.css' rel='stylesheet'/>
           <title>{this.props.currentBlogTitle}</title>
         </head>
         <body>
