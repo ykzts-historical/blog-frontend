@@ -26,10 +26,27 @@ class ApplicationComponent extends React.Component {
     const Handler = this.getCurrentHandler();
     return (
       <div className='ApplicationComponent'>
-        <h1>
-          <NavLink routeName='articles'>{this.props.currentBlogTitle}</NavLink>
-        </h1>
-        <Handler/>
+        <div className='mdl-js-layout mdl-layout'>
+          <header className='mdl-layout__header'>
+            <div className='mdl-layout__header-row'>
+              <span className='mdl-layout__title'>
+                <NavLink routeName='articles'>{this.props.currentBlogTitle}</NavLink>
+              </span>
+            </div>
+          </header>
+          <main className='mdl-layout__content'>
+            <Handler/>
+            <footer className='mdl-mini-footer'>
+              <div className='mdl-mini-footer__left-section'>
+                <ul className='mdl-mini-footer__link-list'>
+                  <li>
+                    <NavLink routeName='articles'>Home</NavLink>
+                  </li>
+                </ul>
+              </div>
+            </footer>
+          </main>
+        </div>
       </div>
     );
   }

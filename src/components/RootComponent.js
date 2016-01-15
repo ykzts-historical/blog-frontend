@@ -14,7 +14,10 @@ class RootComponent extends React.Component {
       <html>
         <head>
           <meta charSet='UTF-8'/>
+          <meta content='width=device-width,initial-scale=1.0' name='viewport'/>
           <link href='/bundle.css' rel='stylesheet'/>
+          <link href='//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet'/>
+          <link href='//fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'/>
           <title>{this.props.currentBlogTitle}</title>
         </head>
         <body>

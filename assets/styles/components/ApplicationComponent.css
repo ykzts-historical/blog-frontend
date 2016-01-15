@@ -1,7 +1,4 @@
-h1 {
-  text-align: center;
-}
-
-h1 a {
+.mdl-layout__title a {
+  color: inherit;
   text-decoration: none;
 }

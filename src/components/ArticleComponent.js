@@ -15,20 +15,25 @@ class ArticleComponent extends React.Component {
   }
 
   getArticleContent() {
-    const body = this.props.article['body'] || '';
-    return body.replace(/\n/g, '');
+    let body = this.props.article['body'] || '';
+    body = body.replace(/\n/g, '');
+    body = [
+      body,
+      '<script>typeof twttr !== \'undefined\' && twttr.widgets.load();</script>'
+    ].join('');
+    return body;
   }
 
   render() {
     return (
       <div className='ArticleComponent'>
-        <article>
-          <header>
-            <h2>
+        <article className='mdl-card  mdl-cell mdl-cell--12-col mdl-shadow--2dp'>
+          <header className='mdl-card__title'>
+            <h2 className='mdl-card__title-text'>
               <NavLink navParams={{ id: this.getArticleId() }} routeName='article'>{this.getArticleTitle()}</NavLink>
             </h2>
           </header>
-          <div dangerouslySetInnerHTML={{ __html: this.getArticleContent() }}/>
+          <div className='mdl-card__supporting-text mdl-color-text--grey-700' dangerouslySetInnerHTML={{ __html: this.getArticleContent() }}/>
         </article>
       </div>
     );

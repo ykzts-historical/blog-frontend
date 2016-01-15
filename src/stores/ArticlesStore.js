@@ -20,8 +20,8 @@ class ArticlesStore extends BaseStore {
   }
 
   receiveArticlesSuccess({ articles }) {
-    this.loading = false;
     this.currentArticles = articles;
+    this.loading = false;
     this.emitChange();
   }
 
@@ -35,12 +35,14 @@ class ArticlesStore extends BaseStore {
 
   dehydrate() {
     return {
-      currentArticles: this.getCurrentArticles()
+      currentArticles: this.getCurrentArticles(),
+      loading: this.isLoading()
     };
   }
 
   rehydrate(state) {
     this.currentArticles = state.currentArticles;
+    this.loading = state.loading;
   }
 }
 
